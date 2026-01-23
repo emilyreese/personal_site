@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Reese</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Fraunces:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --coral: #FF6B6B;
+            --mint: #4ECDC4;
+            --yellow: #FFE66D;
+            --purple: #9B59B6;
+            --navy: #2C3E50;
+            --cream: #FFF8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Fraunces', serif;
+            background: var(--cream);
+            color: var(--navy);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--coral);
+            top: -100px;
+            right: -50px;
+            opacity: 0.7;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--mint);
+            bottom: 20%;
+            left: -80px;
+            opacity: 0.6;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--yellow);
+            top: 40%;
+            right: 10%;
+            opacity: 0.8;
+        }
+
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            background: var(--purple);
+            bottom: 10%;
+            right: 30%;
+            opacity: 0.5;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 30px;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(4rem, 15vw, 10rem);
+            font-weight: 900;
+            line-height: 0.9;
+            letter-spacing: -0.03em;
+            margin-bottom: 30px;
+        }
+
+        h1 span {
+            display: block;
+        }
+
+        h1 .first-name {
+            color: var(--coral);
+        }
+
+        h1 .last-name {
+            color: var(--navy);
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--purple);
+        }
+
+        .card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+        }
+
+        .card:nth-child(1)::before { background: var(--coral); }
+        .card:nth-child(2)::before { background: var(--mint); }
+        .card:nth-child(3)::before { background: var(--yellow); }
+        .card:nth-child(4)::before { background: var(--purple); }
+
+        .card h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 15px;
+            color: var(--navy);
+            opacity: 0.6;
+        }
+
+        .card p {
+            font-size: 1.15rem;
+        }
+
+        .highlight {
+            background: linear-gradient(180deg, transparent 60%, var(--yellow) 60%);
+            padding: 0 4px;
+        }
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 25px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .links a:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .links a:nth-child(1):hover { background: var(--coral); }
+        .links a:nth-child(2):hover { background: var(--mint); }
+        .links a:nth-child(3):hover { background: var(--purple); }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-style: italic;
+            color: var(--navy);
+            opacity: 0.6;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+            .card {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>
+                <span class="first-name">Emily</span>
+                <span class="last-name">Reese</span>
+            </h1>
+            <p class="tagline">Building things that matter</p>
+        </header>
+        <main>
+            <div class="card">
+                <h2>Craft</h2>
+                <p>Over thirteen years, I've balanced the roles of product manager, designer, and engineer, including seven years spent leading and growing teams as a director. In addition to leadership, I'm almost always hacking on my own stuff.</p>
+                </div>
+                <div class="card">
+                <h2>Trajectory</h2>
+                <p>I was born and raised in the USA. After studying the arts at Brown and Sotheby’s, I joined Kickstarter to help creators bring their ideas to life. When I moved to France, I joined OpenClassrooms to scale access to education. As an immigrant in France, I contributed to Réfugiés.info to support those navigating new beginnings. Most personally, after the public healthcare system at Assistance Publique - Hôpitaux de Paris (AP-HP) saved my child’s life, I dedicated my product expertise to the Paris public hospitals that serve us all.</p>
+                <p><br>I'm now a dual citizen (USA - France) and am bilingual in English and French.</p>
+            </div>
+
+
+            <div class="card">
+                <h2>Present</h2>
+                <p>I'm the founder and president of La Fabrique Civile. We are a civic tech nonprofit that builds tools for the public good, addressing the critical needs that often fall between the gaps of the state and the market. I'm also completing an Executive MSc in Innovation and Entrepreneurship at HEC Paris.</p>
+            </div>
+
+            <div class="card">
+                <h2>Causes</h2>
+                <p>I volunteer monthly for the nonprofit L’Envol, leading art workshops for children in Paris pediatric wards. I donate to Le Rire Médecin, Association Laurette Fugain, Sea Shepard, Cœur de Forêt, and L214.</p>
+            </div>
+        </main>
+
+        <nav class="links">
+            <a href="mailto:bonjouremilyreese@gmail.com">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                Say hello
+            </a>
+            <a href="https://linkedin.com/in/eclairereese">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="https://lafabriquecivile.org">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                La Fabrique Civile
+            </a>
+        </nav>
+    </div>
+</body>
+</html>
